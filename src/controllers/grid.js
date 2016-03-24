@@ -18,15 +18,11 @@ exports.change = function(){
     }
 
     if(selected.length === 2){
-      var first     = selected[0];
-      var second    = selected[1];
+      var first  = selected[0];
+      var second = selected[1];
 
       swap(first, second);
-
-      first.selected  = false;
-      second.selected = false;
-      first.item.updateOpts({backgroundColor  : unselected})
-      second.item.updateOpts({backgroundColor : unselected})
+      clear(first, second);
     }
 
   }, 0);
@@ -47,11 +43,9 @@ function swap(first, second){
   });
 }
 
-      // sorry not posible
-      //if(first.name !== second.name){
-        //first.selected  = false;
-        //second.selected = false;
-        //first.item.updateOpts({backgroundColor  : unselected})
-        //second.item.updateOpts({backgroundColor : unselected})
-        //return false;
-      //}
+function clear(first, second){
+  first.selected  = false;
+  second.selected = false;
+  first.item.updateOpts({backgroundColor  : unselected})
+  second.item.updateOpts({backgroundColor : unselected})
+}
