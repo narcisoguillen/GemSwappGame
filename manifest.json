@@ -1,0 +1,18 @@
+{
+
+  "title"     : "Gem Swapper",
+  "shortName" : "GemSwapper",
+  "appID"     : "7c588ff7c8354da4b563a3524bda3a20",
+
+  "dependencies": {
+    "devkit-core" : "https://github.com/gameclosure/devkit-core#v4.5.0"
+  },
+
+  "studio": {
+    "domain"        : "http://tangosource.com",
+    "name"          : "TangoIo",
+    "stagingDomain" : "http://tangosource.com"
+  },
+
+  "supportedOrientations": [ "portrait", "landscape" ]
+}
