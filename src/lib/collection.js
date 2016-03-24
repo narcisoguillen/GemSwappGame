@@ -1,10 +1,12 @@
 import .logger as Logger
+import ..main as GemSwapper
 
-var Grid = {
-  X : 5,
-  Y : 10,
-  increaseX : 140,
-  increaseY : 120
+// Maybe send this to another component
+GemSwapper.Grid = {
+  X : 5, // Calculate with device
+  Y : 10, // Calculate with device
+  increaseX : 140, // Calculate with device
+  increaseY : 120 // Calculate with device
 };
 
 //Items
@@ -14,13 +16,13 @@ import ..items.strawberry as strawberry
 exports.load = function(options){
   Logger('Draw items');
   var itemName = null;
-  for(var x=0; x<Grid.X; x++){
-    for(var y=0; y<Grid.Y; y++){
+  for(var x=0; x<GemSwapper.Grid.X; x++){
+    for(var y=0; y<GemSwapper.Grid.Y; y++){
       itemName = getItem();
-      Grid[""+x+""+y] = new itemName({
+      GemSwapper.Grid[""+ x +""+ y] = new itemName({
         el : options.el,
-        x  : x * Grid.increaseX,
-        y  : y * Grid.increaseY
+        x  : x * GemSwapper.Grid.increaseX,
+        y  : y * GemSwapper.Grid.increaseY
       });
     }
   }
