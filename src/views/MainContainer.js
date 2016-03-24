@@ -2,6 +2,7 @@ import device;
 import ui.View  as View;
 import ui.Color as Color;
 import ..lib.logger as Logger
+import ..lib.collection as Items
 
 function MainContainer(options){
   Logger('Drawing: MainContainer');
@@ -15,6 +16,11 @@ function MainContainer(options){
     width           : device.width  - 20  ,
     height          : device.height - 150
   });
+
+  this.container.items = Items.load({
+    el : this.container
+  });
+
 }
 
 exports = MainContainer;
