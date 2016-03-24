@@ -8,7 +8,7 @@ function Grape(options){
   this.name      = 'Grape';
 
   var states = {
-    on  : new Color({r: 80, g: 200, b: 10, a: 0.5}),
+    on  : new Color({r: 200, g: 0, b: 0, a: 0.5}),
     off : new Color({r: 0, g: 0, b: 0, a: 0})
   };
 

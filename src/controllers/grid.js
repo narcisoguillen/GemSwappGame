@@ -1,6 +1,7 @@
 import ..main as GemSwapper
 import ui.Color as Color;
 import animate;
+import ..lib.logger as logger
 
 var unselected = new Color({r: 0, g: 0, b: 0, a: 0});
 
@@ -28,6 +29,7 @@ exports.change = function(){
 };
 
 function swap(first, second){
+  logger('Change a ' + first.name + ' for a ' + second.name);
   var firstPos  = first.item.getPosition();
   var secondPos = second.item.getPosition();
 
