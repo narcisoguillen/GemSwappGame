@@ -24,13 +24,24 @@ exports.change = function(){
       swap(first, second);
       clear(first, second);
     }
-
   }, 0);
 };
 
 function swap(first, second){
   var firstPos  = first.item.getPosition();
   var secondPos = second.item.getPosition();
+
+  var x = Math.abs(firstPos.x - secondPos.x);
+  var y = Math.abs(firstPos.y - secondPos.y);
+
+  // Sorry not posible only Up and Down
+  if(x > 0 && y > 0){ clear(first, second); return false; }
+
+  // Sorry to far in the X axis
+  if(x > GemSwapper.Grid.increaseX){ clear(first, second); return false; }
+
+  // Sorry to far in the Y axis
+  if(y > GemSwapper.Grid.increaseY){ clear(first, second); return false; }
 
   animate(first.item).now({
     x: secondPos.x - 10,
