@@ -63,7 +63,7 @@ var timer = setInterval(function(){
 
     }
   }
-}, 800);
+}, 500);
 
 function kill(list){
   var coorsX;

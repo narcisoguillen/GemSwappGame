@@ -14,10 +14,14 @@ import ..items.banana     as banana
 import ..items.strawberry as strawberry
 import ..items.limon      as limon
 import ..items.grape      as grape
+import ..items.orange     as orange
+
+var el = null;
 
 exports.load = function(options){
   Logger('Draw items');
   var itemName = null;
+  el = options.el;
   for(var x=0; x<GemSwapper.Grid.X; x++){
     for(var y=0; y<GemSwapper.Grid.Y; y++){
       itemName = getItem();
@@ -31,13 +35,29 @@ exports.load = function(options){
   }
 }
 
+var timer = setInterval(function(){
+  var itemName = null;
+  for(var i=0;i<GemSwapper.Grid.X;i++){
+    if(!GemSwapper.Grid[i+"0"]){
+      itemName = getItem();
+      GemSwapper.Grid[i+"0"] = new itemName({
+        el    : el,
+        x     : i * GemSwapper.Grid.increaseX,
+        y     : 0 * GemSwapper.Grid.increaseY,
+        coors : { x : i, y : 0 }
+      });
+    }
+  }
+}, 450);
+
 function getItem(){
-  var items = 4; // Number of different items
+  var items = 5; // Number of different items
   var name  = {
     1 : banana     ,
     2 : strawberry ,
     3 : limon      ,
-    4 : grape
+    4 : grape      ,
+    5 : orange
   };
 
   var random = Math.floor((Math.random() * items) + 1);

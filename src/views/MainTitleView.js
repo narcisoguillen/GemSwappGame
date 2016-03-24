@@ -6,8 +6,8 @@ function MainTitleView(options){
 
   this.title = new TextView({
     superview   : options.el             ,
-    text        : 'Gem Swapper'          ,
-    color       : 'white'                ,
+    text        : 'Kill the Fruits!'     ,
+    color       : 'orange'                ,
     shadowColor : '#999999'              ,
     x           : 0                      ,
     y           : 0                      ,
