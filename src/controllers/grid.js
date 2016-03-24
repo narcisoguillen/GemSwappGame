@@ -6,6 +6,7 @@ import ..lib.logger as logger
 var unselected = new Color({r: 0, g: 0, b: 0, a: 0});
 
 exports.change = function(){
+  GLOBAL.GemSwapper = GemSwapper;
   var selected = [];
 
   // Let the game breath
@@ -102,6 +103,7 @@ function clear(first, second){
   second.item.updateOpts({backgroundColor : unselected})
 }
 
+//TODO improve
 function checkX(){
   setTimeout(function(){
     var item  = null;
@@ -125,9 +127,12 @@ function checkX(){
         }
       }
     }
+
+    if(count.length >= 3){ kill(count); }
   }, 5);
 }
 
+//TODO improve
 function checkY(){
   setTimeout(function(){
     var item  = null;
@@ -151,5 +156,7 @@ function checkY(){
         }
       }
     }
+
+    if(count.length >= 3){ kill(count); }
   }, 5);
 }
