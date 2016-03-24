@@ -3,9 +3,10 @@ import event.input.drag as drag;
 import ui.Color as Color;
 
 function Limon(options){
-  var limon = this;
+  var limon      = this;
   this.selected  = false;
   this.name      = 'Limon';
+  this.coors     = options.coors;
 
   var states = {
     on  : new Color({r: 0, g: 100, b: 190, a: 0.5}),

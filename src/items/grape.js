@@ -3,9 +3,10 @@ import event.input.drag as drag;
 import ui.Color as Color;
 
 function Grape(options){
-  var grape = this;
+  var grape      = this;
   this.selected  = false;
   this.name      = 'Grape';
+  this.coors     = options.coors;
 
   var states = {
     on  : new Color({r: 200, g: 0, b: 0, a: 0.5}),

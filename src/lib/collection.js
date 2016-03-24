@@ -22,9 +22,10 @@ exports.load = function(options){
     for(var y=0; y<GemSwapper.Grid.Y; y++){
       itemName = getItem();
       GemSwapper.Grid[""+ x +""+ y] = new itemName({
-        el : options.el,
-        x  : x * GemSwapper.Grid.increaseX,
-        y  : y * GemSwapper.Grid.increaseY
+        el    : options.el,
+        x     : x * GemSwapper.Grid.increaseX,
+        y     : y * GemSwapper.Grid.increaseY,
+        coors : { x : x, y : y }
       });
     }
   }

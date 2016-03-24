@@ -6,6 +6,7 @@ function Strawberry(options){
   var strawberry = this;
   this.selected  = false;
   this.name      = 'Strawberry';
+  this.coors     = options.coors;
 
   var states = {
     on  : new Color({r: 100, g: 0, b: 190, a: 0.5}),

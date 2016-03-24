@@ -6,6 +6,7 @@ function Banana(options){
   var banana    = this;
   this.selected = false;
   this.name     = 'Banana';
+  this.coors    = options.coors;
 
   var states = {
     on  : new Color({r: 100, g: 0, b: 0, a: 0.5}),
